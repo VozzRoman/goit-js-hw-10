@@ -29,13 +29,17 @@ function renderMarkUpCard(countries) {
 		info.innerHTML = '';
 	if (countries.length === 1) {
 		container.innerHTML = createMarkUpList(countries);
+		
 		info.innerHTML = crateMarkUpInfo(countries);
 	} else if (countries.length >= valueCountries) {
 		wrongType();
 	} else {
 		container.innerHTML = createMarkUpList(countries);
+		const bigSize = document.querySelectorAll('.list__country');
+		for (const name of bigSize) {
+			name.style.fontSize = '30px';//)))
+		}
 	}
-
 }
 
 function createMarkUpList(countries) {
